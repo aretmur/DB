@@ -120,3 +120,86 @@ const Index = () => {
       {/* Music Section */}
       <section id="music" className="py-20 relative z-10">
         <div className="container px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="glass rounded-2xl p-8">
+              <h2 className="text-3xl font-bold tracking-tighter mb-8">Latest Release</h2>
+              <Link 
+                to="/ep/5-rooms-of-decay"
+                className="block p-6 rounded-lg bg-white/5 hover:bg-white/10 transition-colors group"
+              >
+                <div className="flex items-center space-x-6">
+                  <div className="w-20 h-20 rounded-lg overflow-hidden bg-white/10">
+                    <img 
+                      src="/lovable-uploads/ebc446a5-97e2-42c3-89db-e80a684c332d.png"
+                      alt="5 Rooms of Decay"
+                      className="w-full h-full object-contain p-2"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-accent transition-colors">
+                      5 Rooms of Decay
+                    </h3>
+                    <p className="text-white/70 mb-2">New EP • 5 Tracks</p>
+                    <p className="text-sm text-white/50">Coming Soon</p>
+                  </div>
+                  <Music className="w-6 h-6 text-accent" />
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Upcoming Shows */}
+      <section id="shows" className="py-20 relative z-10">
+        <div className="container px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="glass rounded-2xl p-8">
+              <h2 className="text-3xl font-bold tracking-tighter mb-8">Upcoming Shows</h2>
+              <div className="space-y-4">
+                {[
+                  { date: "MAR 15", venue: "Techno Temple, Berlin", status: "SOLD OUT" },
+                  { date: "MAR 22", venue: "Club Vision, Amsterdam", status: "TICKETS" },
+                  { date: "APR 05", venue: "The Warehouse, London", status: "TICKETS" },
+                ].map((show) => (
+                  <div key={show.date} className="flex items-center justify-between p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                    <div className="flex items-center space-x-6">
+                      <Calendar className="w-5 h-5 text-accent" />
+                      <span className="font-medium">{show.date}</span>
+                      <span className="text-white/70">{show.venue}</span>
+                    </div>
+                    <span className="text-sm font-medium text-accent">{show.status}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-20 mt-auto relative z-10">
+        <div className="container px-4">
+          <div className="flex flex-col items-center space-y-8">
+            <div className="flex space-x-6">
+              <a href="#" className="text-white/70 hover:text-white transition-colors">
+                <Instagram className="w-6 h-6" />
+              </a>
+              <a href="#" className="text-white/70 hover:text-white transition-colors">
+                <Facebook className="w-6 h-6" />
+              </a>
+              <a href="#" className="text-white/70 hover:text-white transition-colors">
+                <Twitter className="w-6 h-6" />
+              </a>
+            </div>
+            <p className="text-white/50 text-sm">
+              © {new Date().getFullYear()} Dirty Bourgeois. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
